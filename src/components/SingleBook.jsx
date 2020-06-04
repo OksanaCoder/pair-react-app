@@ -1,13 +1,12 @@
 import React, { Component } from 'react';
 import {Card, Button} from 'react-bootstrap';
-import data from '../jsons/history.json';
 
 class Book extends Component {
    constructor(props) {
        super(props);
        
        this.state = {
-           books: data.slice(0, 1)
+           books: this.props.books
        }
    }
     render() {
