@@ -6,7 +6,7 @@ class Book extends Component {
        super(props);
        
        this.state = {
-           books: this.props.books
+           books: this.props.books.slice(0, 1)
        }
    }
     render() {
