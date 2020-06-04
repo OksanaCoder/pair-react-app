@@ -12,7 +12,7 @@ class Warning extends Component {
         alert(this.props.text);
     }
     render(){
-        return <Button variant="warning" onClick={this.handleClick}>Warning</Button>
+        return <Button className='m-5' variant="warning" onClick={this.handleClick}>Warning</Button>
     }
 }
 
