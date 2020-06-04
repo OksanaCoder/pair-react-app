@@ -7,7 +7,7 @@ class BookList extends React.Component {
     return (
       <Container>
           {books.map(book => 
-          <img src={book.img} style={{width:"200px"}} />
+          <img src={book.img} style={{width:"150px"}} />
         //   <SingleBook key={book.asin} book={book} />)
           )}
       </Container>
