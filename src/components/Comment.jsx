@@ -11,17 +11,30 @@ class Comment extends Component {
    };
 
    updateComment = event => {
-       this.setState({
+    //    this.setState({
 
-                comment: {
-                    comment : event.target.value,
-                    rate : parseInt(event.target.value),
-                    elementID: parseInt(event.target.value)
-                }
+    //             comment: {
+    //                 comment : event.target.value,
+    //                 rate : parseInt(event.target.value),
+    //                 elementID: parseInt(event.target.value)
+    //             }
          
-       })
+    //    })
+    let comment = this.state.comment;
+    let elementID = event.currentTarget.id;
+    console.log(elementID);
+    
+            if (elementID === 'id' || elementID === 'rate') {
+              comment[elementID] = parseInt(event.currentTarget.value)
+            } 
+            else {
+                comment[elementID] = event.currentTarget.value
+            }
+        
+            this.setState({ comment: comment })
+          }
+        
   
-   }
   
    addComment = event => {
        event.preventDefault();
