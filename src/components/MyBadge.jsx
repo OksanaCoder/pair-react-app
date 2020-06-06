@@ -4,12 +4,12 @@ import { Container, Badge } from "react-bootstrap";
 class MyBadge extends React.Component {
     render (){
         return (
-            <Container>
-                <Badge variant="primary" className="m-2">
-                    Random Badge Text 
+        
+                <Badge variant="primary ml-2">
+                  0
                 </Badge>
 
-            </Container>
+            
         )
     }
 

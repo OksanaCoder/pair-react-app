@@ -2,7 +2,7 @@ import React,  { Component } from 'react';
 
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Warning from './components/WarningSign';
+// import Warning from './components/WarningSign';
 
 import Book from './components/SingleBook';
 import history from './jsons/history.json';
@@ -11,9 +11,11 @@ import romance from './jsons/romance.json';
 import horror from './jsons/horror.json';
 import scifi from './jsons/scifi.json';
 import { Dropdown } from 'react-bootstrap';
-import MyBadge from './components/MyBadge';
+// import MyBadge from './components/MyBadge';
 import Comment from './components/Comment';
-
+import NavBar from './components/Navbar';
+import CarouselMain from './components/Carousel';
+import Footer from './components/Footer';
 
 class App extends Component {
   constructor(props) {
@@ -31,11 +33,13 @@ class App extends Component {
 
   return (
     <div className="App">
-      <Warning text='This is warning button' />
-      <MyBadge />
+      <NavBar />
+      <CarouselMain />
+    
+  
       <div className ='container'>
       <Dropdown className='drop-select m-4 text-left'>
-        <Dropdown.Toggle variant="success" id="dropdown-basic">
+        <Dropdown.Toggle variant="primary" id="dropdown-basic">
          
         </Dropdown.Toggle>
 
@@ -50,11 +54,11 @@ class App extends Component {
       </div>
       {this.state.genre === null && (
         <div>
-      <Book books={history.slice(0,4)} />
-      <Book books={fantasy.slice(0,4)}/>
-      <Book books={romance.slice(0,4)}/>
-      <Book books={horror.slice(0,4)}/>
-      <Book books={scifi.slice(0,4)}/> 
+      <Book books={history.slice(0,6)} />
+      <Book books={fantasy.slice(0,6)}/>
+      <Book books={romance.slice(0,6)}/>
+      <Book books={horror.slice(0,6)}/>
+      <Book books={scifi.slice(0,6)}/> 
       </div>
       )
   }
@@ -77,6 +81,7 @@ class App extends Component {
     this.state.genre === 'scifi' && (<Book books={scifi.slice(0,4)} />)
   }
   <Comment />
+  <Footer />
     </div>
   )
   }

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import {Card, Button} from 'react-bootstrap';
+import { FaCar, FaCartPlus } from 'react-icons/fa';
 // import Comment from 'Comment';
 
 class Book extends Component {
@@ -26,14 +27,17 @@ class Book extends Component {
                     return (
                    
                         <div className="col-sm-6 col-md-3 col-lg-2 ">
-                        <Card>
-                            <Card.Img src={book.img}/>
-                         </Card>
-                        <Card.Body>
+                        <Card className='card-item'>
+                            <Card.Img src={book.img} className='img-card'/>
+                        
+                        <Card.Body className='body-card'>
                             <Card.Title className='title-size'>{book.title}</Card.Title>
-                            
-                        </Card.Body>
-                       
+                            <div className='btn-group'>
+                                <button type="button" class="btn btn-primary btn-sm comment">Add comment</button>
+                                <button type="button" class="btn btn-secondary btn-sm"><FaCartPlus /></button>
+                            </div>
+                            </Card.Body>
+                        </Card>
                         </div>
                     )
                 })}
