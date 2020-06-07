@@ -71,7 +71,7 @@ import { FaFacebook, FaTwitter, FaInstagram, FaPrint, FaPhone , FaHome, FaEnvelo
   </div>
   <div className='wrapper-footer'>
     <div className="container">
-        <div class="footer-copyright text-center py-3">© 2020 Copyright:
+        <div className="footer-copyright text-center py-3">© 2020 Copyright:
             <a href="#" className='text-white'> Wise up</a>
         </div>
     </div>

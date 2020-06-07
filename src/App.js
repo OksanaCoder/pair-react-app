@@ -16,7 +16,7 @@ import Comment from './components/Comment';
 import NavBar from './components/Navbar';
 import CarouselMain from './components/Carousel';
 import Footer from './components/Footer';
-
+// import List from './components/list';
 class App extends Component {
   constructor(props) {
     super(props);
@@ -35,7 +35,7 @@ class App extends Component {
     <div className="App">
       <NavBar />
       <CarouselMain />
-    
+    {/* <List text='this is a book list'/> */}
   
       <div className ='container'>
       <Dropdown className='drop-select m-4 text-left'>

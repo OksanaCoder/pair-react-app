@@ -1,8 +1,25 @@
 import React, { Component } from 'react';
 import { Navbar, Nav, Button, FormControl, Form } from 'react-bootstrap';
 import MyBadge from './MyBadge';
+import Book from './SingleBook';
 
-const NavBar = () => {
+class NavBar extends Component{
+    state = {
+        search: ''
+    }
+    changeHandler = (event) => {
+        this.setState({
+            search: event.target.value
+        });
+    }
+    handleSubmit = (event) => {
+       
+        alert('Your fave book is: ' + this.state.search);
+        event.preventDefault();
+    }
+    render () {
+
+    
     return (
 <>
   <Navbar className='nav-bg'>
@@ -14,16 +31,25 @@ const NavBar = () => {
       <Nav.Link href="#" className='text-white'>Home</Nav.Link>
       <Nav.Link href="#" className='text-white'>Cart
       <MyBadge />
+   
       </Nav.Link>
+
     </Nav>
-    <Form inline>
-      <FormControl type="text" placeholder="Search" className="mr-sm-2" />
-      <Button variant="outline-info">Search</Button>
+    <Form inline onSubmit={this.handleSubmit}>
+      <FormControl 
+      type="text" 
+      placeholder="Search" 
+      className="mr-sm-2" 
+      value={this.state.search}
+      onChange={this.changeHandler}
+      />
+      <Button variant="outline-info" onClick={this.handleSubmit}>Search</Button>
     </Form>
   </Navbar>
 
 </>
     )
+}
 }
 
 export default NavBar;
